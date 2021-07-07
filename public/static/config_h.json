@@ -1,0 +1,36 @@
+{
+    "default": {
+        "AZIMUTH_ANGLE": -90.76948763507997,
+        "CAMERA_RADIUS": 4999.999999999898,
+        "CENTER_POINT": {
+            "_gsTweenID": "t4",
+            "x": -3677.395651910938,
+            "y": 3876.2500272913935,
+            "z": 0
+        },
+        "POLAR_ANGLE": 29.893175074182775
+    },
+    "ONE_FLOOR_NAVIGATE_POLAR_ANGLE": 40,
+    "MORE_FLOOR_NAVIGATE_POLAR_ANGLE": "51.89910979228262",
+    "MORE_AZIMUTH_ANGLE": "-91.76251899396826",
+    "MORE_CAMERA_RADIUS": "5999.99999999914",
+    "MORE_CENTER_POINT": {
+        "_gsTweenID": "t4",
+        "x": -3677.395651910938,
+        "y": 3876.2500272913935,
+        "z": 0
+    },
+    "2048move": {
+        "AZIMUTH_ANGLE": -90.76948763508003,
+        "CAMERA_RADIUS": 4999.999999999893,
+        "CENTER_POINT": {
+            "_gsTweenID": "t4",
+            "x": -3692.2912381823835,
+            "y": 3371.177975825487,
+            "z": -1.4022853599920458e-14
+        },
+        "POLAR_ANGLE": 29.89317507418275
+    },
+    "POSITION_NODEID":"847606",
+    "POSITION_FLOOR":"2048"
+}
