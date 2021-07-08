@@ -2,7 +2,7 @@
  * 在线 - true 
  * 离线 - false 
  * */
-window.lineState = false;
+window.lineState = true;
 
 window.MAP_CONFIG = {
     APP_VERSION: "v1.0.0",
