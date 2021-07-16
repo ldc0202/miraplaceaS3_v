@@ -7,6 +7,8 @@ window.lineState = true;
 window.MAP_CONFIG = {
     APP_VERSION: "v1.0.0",
 
+    isShowLan: true, //是否显示英文按钮
+
     /** --------------------------------------- 基础设置 --------------------------------------- */
 
     /** TODO:改横竖版本此处必须改 横版 - 0 竖版 - 1 */
@@ -31,7 +33,8 @@ window.MAP_CONFIG = {
     HOT_SEARCH_NUMBER: 10,
 
     /** 项目id  */
-    PID: 179,
+    PID: 239,
+    // PID: 179,
 
     /** 建筑ID  */
     BUILDING_ID: 237,

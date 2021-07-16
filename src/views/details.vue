@@ -47,6 +47,22 @@
       </div>
       <!-- <span class="giraffe" :style="giraffeStyle"></span> -->
     </div>
+
+    <div class="language" v-if="isShowLan">
+        <div
+          :class="['zh', language == 'zh' ? 'sel' : '']"
+          @click="toggleLang('zh')"
+        >
+          中
+        </div>
+        <div
+          :class="['en', language == 'en' ? 'sel' : '']"
+          @click="toggleLang('en')"
+        >
+          EN
+        </div>
+    </div>
+    <div>{{$t("wearthe.outdoor")}}</div>
     <!-- 主要功能按钮组 -->
     <!-- <div class="main-button">
       <div class="goBack" @click="goBack"></div>
@@ -66,6 +82,7 @@ import { debounce } from "@/utils";
 export default {
   data() {
     return {
+      isShowLan: window.MAP_CONFIG.isShowLan,
       // 是否显示banner
       isShowBanner: true,
       // 激活路由index
@@ -146,6 +163,7 @@ export default {
       ],
       // 历史记录堆栈 方便对后退功能进行判断
       historyStack: [],
+      language: "zh",
     };
   },
   computed: {
@@ -200,6 +218,17 @@ export default {
     // },
   },
   methods: {
+     toggleLang(lang) {
+      if (lang == "zh") {
+        localStorage.setItem("language", "zh");
+        this.$i18n.locale = localStorage.getItem("language");
+      } else if (lang == "en") {
+        localStorage.setItem("language", "en");
+        this.$i18n.locale = localStorage.getItem("language");
+      }
+      this.language = lang;
+      this.updateRouteStyle(this.btnName);
+    },
     ...mapActions("home", [GET_BANNER_LIST, GET_ACTIVITY_INFO]),
     // 更新路由按钮样式
     updateRouteStyle(name) {
@@ -435,7 +464,30 @@ export default {
       box-shadow: 0px 2px 20px rgba(57, 6, 2, 0.3);
       border-radius: 80px;//75px;
     }
+    
+    .language {
+        position: absolute;
+        bottom: 251px;
+        div {
+          width: 72px;
+          height: 84px;
 
+          border-radius: 16px;
+          font-size: 44px;
+          font-family: Noto Sans SC;
+          font-weight: 400;
+          line-height: 84px;
+          color: #ad8249;
+          text-align: center;
+          &.en {
+            margin-top: 38px;
+          }
+          &.sel {
+            background: #e6dbce;
+          }
+        }
+      }
+      
     .route-button-container {
       position: absolute;
       left: 0;

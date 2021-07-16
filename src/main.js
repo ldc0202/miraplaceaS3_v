@@ -17,16 +17,28 @@ import './assets/css/animate.css';
 import 'element-ui/lib/theme-chalk/base.css';
 import "@/libs/keyboard/keyboard.min.css";
 import Keyboard from "@/libs/keyboard/keyboard.min.js";
+import VueI18n from "vue-i18n";
 
 getMapConfigJSon(() => {
   Vue.use(VueAwesomeSwiper)
   Vue.use(plugins);
+  Vue.use(VueI18n)
   Vue.use(Keyboard);
 
   Vue.prototype.$EventBus = new Vue();
+
+  const i18n = new VueI18n({
+    locale: "zh", // 语言标识
+    messages: {
+      zh: require("./assets/language/zh"),
+      en: require("./assets/language/en"),
+    },
+  });
+
   Vue.config.productionTip = false;
   new Vue({
     router,
+    i18n,
     store,
     render: h => h(App)
   }).$mount('#app');

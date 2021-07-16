@@ -16,8 +16,8 @@ let OLD_STATISTICS, OLD_PARAMETER1, OLD_PARAMETER2, OLD_PARAMETER3;
  * @returns
  */
 export const getWeather = async () => await GET(`${window.MAP_CONFIG.LINE_URL}ids/getWeather`, {
-    skin: "white",
-    from: "bd",
+    skin: "white128",
+    from: "hk",
     lineState:true
 });
 

@@ -24,6 +24,8 @@ export default {
     async getWeather() {
       const weatherData = await getWeather()
       if (!weatherData) return;
+      // {"msg":"OK","c":200,"v":{"warningInForce":[{"Image":"https://files.ckiosk.cn/weather/warning/white128/20.png","Name":"酷热天气警告"}],"weatherTemperature":"29~35℃","weatherdate":"2021-07-13","weatherHumidity":"69%","CurrentTemperature":"30.5℃","weatherCity":"香港","weatherStr":"间有阳光","weatherImg":"../Upload/239/Weather_white128_51.png","dateAndweather":"星期二 07月13日 (实时：29℃)","weatherWind":"吹轻微至和缓偏南风","weatherStatus":"0"}}
+      // debugger
       const { CurrentTemperature, weatherImg } = weatherData;
       this.weatherTemperature = CurrentTemperature;
       this.logo = `${MAP_CONFIG.LINE_URL}map/${weatherImg}`;
